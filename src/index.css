@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  input[type="search"],
+  select,
+  textarea {
+    @apply h-12 px-4 py-3 rounded-lg text-base;
+    @apply border-2 border-gray-300;
+    @apply shadow-sm;
+    @apply focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500;
+    @apply placeholder:text-gray-400;
+    @apply bg-white;
+    @apply transition-all duration-200;
+  }
+
+  select {
+    @apply pr-10;
+  }
+
+  textarea {
+    @apply h-auto min-h-[120px] py-3;
+  }
+
+  .input-group {
+    @apply space-y-1.5;
+  }
+
+  .input-group label {
+    @apply block text-sm font-medium text-gray-700;
+  }
+
+  .input-group .helper-text {
+    @apply mt-1 text-sm text-gray-500;
+  }
+
+  .input-error {
+    @apply text-sm text-red-600 mt-1;
+  }
+
+  /* Custom styles for search inputs */
+  .search-input {
+    @apply pl-12;
+  }
+
+  /* Style for input groups that are stacked together */
+  .stacked-inputs > :not([hidden]) ~ :not([hidden]) {
+    @apply -mt-px rounded-t-none;
+  }
+
+  .stacked-inputs > :first-child {
+    @apply rounded-b-none;
+  }
+
+  .stacked-inputs > :last-child {
+    @apply rounded-t-none;
+  }
+
+  /* Hover state for inputs */
+  input:hover:not(:disabled):not(:focus),
+  select:hover:not(:disabled):not(:focus),
+  textarea:hover:not(:disabled):not(:focus) {
+    @apply border-gray-400;
+  }
+
+  /* Error state for inputs */
+  input.error,
+  select.error,
+  textarea.error {
+    @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+  }
+
+  /* Disabled state for inputs */
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    @apply bg-gray-100 cursor-not-allowed border-gray-200;
+  }
+}
